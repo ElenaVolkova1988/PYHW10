@@ -14,22 +14,35 @@ class Triangle:
     def __init__(self,ab, bc, ac ):
         self.ab = ab
         self.bc = bc
-        self.ac = ac        
+        self.ac = ac 
+        if not self._check_exists():
+            raise ValueError     
+        
+    def _check_exists(self):
+        if all((
+            (self.ab + self.bc > self.ac),
+            (self.bc + self.ac > self.ab),
+            (self.ac + self.ab > self.bc)
+        )):
+            return True
+        return False      
          
     def isosceles (self):
         if ab + bc > ac and bc + ac > ab and ac + ab > bc:
             if ab == bc != ac or ab == ac != bc or ac == bc != ab:
                 return True 
-    
+        return False 
+
     def versatile (self):
         if ab != bc or ab != ac or ac != bc:
             return True
+        return False     
         
     def equilateral (self):
         if ab == bc and ab == ac and ac == bc:
-            return True        
-""" else :
-    retern False """
+            return True
+        return False  
     
-tringl1 = Triangle(7,9,10)
-print (f'равнобедренный tringl1.equilateral()
+if __name__ == '__main__': 
+                 
+    trringle1 = Triangle(ab,bc,ac).trringle1.isosceles(7,4,5)

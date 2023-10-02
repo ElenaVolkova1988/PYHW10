@@ -60,7 +60,7 @@ class Factory:
         else:
             raise ValueError 
 
-if __name__ == '__main__':
+
     obj_1 = Factory('dog', 'Рекс', 1, 'сторожит').return_object()
     print(type(obj_1))
     print(f'{obj_1.name} {obj_1.get_spec()}')
